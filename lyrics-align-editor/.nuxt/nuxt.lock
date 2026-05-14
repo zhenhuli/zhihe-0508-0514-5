@@ -1,9 +1,0 @@
-{
-  "pid": 82305,
-  "startedAt": 1778727588149,
-  "command": "dev",
-  "cwd": "/Users/lizhenhu/Desktop/zhihe-0508-0514-5/lyrics-align-editor",
-  "port": 3000,
-  "hostname": "::1",
-  "url": "http://[::1]:3000"
-}
