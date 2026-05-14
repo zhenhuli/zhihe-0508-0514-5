@@ -1,0 +1,13 @@
+{
+  "name": "paper-fold-sim",
+  "version": "1.0.0",
+  "description": "纸张折叠动画模拟器",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "devDependencies": {
+    "snowpack": "^3.8.8",
+    "@snowpack/plugin-sass": "^1.4.0"
+  }
+}

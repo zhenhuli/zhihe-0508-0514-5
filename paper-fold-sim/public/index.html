@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纸张折叠动画模拟器</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>纸张折叠动画模拟器</h1>
+            <p>分步演示折纸结构变化</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls">
+                <div class="control-group">
+                    <h3>折叠类型</h3>
+                    <button class="btn btn-primary" data-fold="square">正方形对折</button>
+                    <button class="btn btn-secondary" data-fold="triangle">三角折</button>
+                    <button class="btn btn-tertiary" data-fold="multi">多层翻折</button>
+                </div>
+                
+                <div class="control-group">
+                    <h3>步骤控制</h3>
+                    <button class="btn btn-step" id="prevStep">上一步</button>
+                    <button class="btn btn-step" id="nextStep">下一步</button>
+                    <button class="btn btn-reset" id="reset">重置</button>
+                </div>
+
+                <div class="control-group">
+                    <h3>自动演示</h3>
+                    <button class="btn btn-play" id="playAll">自动播放</button>
+                    <button class="btn btn-pause" id="pause">暂停</button>
+                </div>
+
+                <div class="step-info">
+                    <h3>当前步骤</h3>
+                    <p id="stepDescription">点击折叠类型开始演示</p>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <div class="paper-wrapper">
+                    <div id="paper" class="paper">
+                        <div class="paper-half paper-left"></div>
+                        <div class="paper-half paper-right"></div>
+                        <div class="paper-half paper-top"></div>
+                        <div class="paper-half paper-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
