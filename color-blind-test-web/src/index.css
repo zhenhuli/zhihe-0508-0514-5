@@ -1,0 +1,513 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.startBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.testContainer {
+  display: none;
+}
+
+.testContainer.active {
+  display: block;
+}
+
+.progressBar {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.questionCount {
+  color: #666;
+  margin-bottom: 20px 0;
+  font-size: 14px;
+}
+
+.imageContainer {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px 0;
+}
+
+.optionBtn {
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.optionBtn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.optionBtn.correct {
+  border-color: #4caf50;
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.optionBtn.wrong {
+  border-color: #f44336;
+  background: #ffebee;
+  color: #f44336;
+}
+
+.feedback {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.feedback.correct {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.feedback.wrong {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.nextBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.resultContainer {
+  display: none;
+}
+
+.resultContainer.active {
+  display: block;
+}
+
+.resultTitle {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.scoreDisplay {
+  font-size: 48px;
+  font-weight: bold;
+  color: #667eea;
+  margin: 20px 0;
+}
+
+.evaluation {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.evaluation h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.evaluation p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.restartBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modeSelector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.modeCard {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.modeCard:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+}
+
+.modeCard.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.modeIcon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.modeName {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.modeDesc {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.diagnosisCard {
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.diagnosisCard.normal {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border: 2px solid #4caf50;
+}
+
+.diagnosisCard.mild {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border: 2px solid #ffc107;
+}
+
+.diagnosisCard.moderate {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border: 2px solid #ff9800;
+}
+
+.diagnosisCard.severe {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border: 2px solid #f44336;
+}
+
+.diagnosisIcon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.diagnosisTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.diagnosisSeverity {
+  font-size: 14px;
+  color: #666;
+}
+
+.analysisDetails {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.analysisItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.analysisItem:last-child {
+  border-bottom: none;
+}
+
+.analysisLabel {
+  color: #666;
+  font-size: 14px;
+}
+
+.analysisValue {
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.knowledgeBtn {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.knowledgeBtn:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.knowledgeContainer {
+  display: none;
+  text-align: left;
+}
+
+.knowledgeContainer.active {
+  display: block;
+}
+
+.knowledgeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.knowledgeTitle {
+  color: #333;
+  font-size: 22px;
+  margin: 0;
+}
+
+.backBtn {
+  background: #f0f0f0;
+  color: #666;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.knowledgeTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.knowledgeTab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f9fa;
+  color: #666;
+  border: 2px solid transparent;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.knowledgeTab:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.knowledgeTab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.knowledgeTabIcon {
+  font-size: 16px;
+}
+
+.knowledgeTabTitle {
+  font-weight: 500;
+}
+
+.knowledgeContent {
+  background: #fafafa;
+  border-radius: 15px;
+  padding: 25px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.knowledgeSection {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.knowledgeSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.knowledgeSectionIcon {
+  font-size: 32px;
+}
+
+.knowledgeSectionTitle {
+  color: #333;
+  font-size: 20px;
+  margin: 0;
+}
+
+.knowledgeSectionContent h3 {
+  color: #667eea;
+  font-size: 17px;
+  margin: 20px 0 12px 0;
+}
+
+.knowledgeSectionContent h3:first-child {
+  margin-top: 0;
+}
+
+.knowledgeSectionContent p {
+  color: #555;
+  line-height: 1.8;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.knowledgeSectionContent strong {
+  color: #333;
+}
+
+.knowledgeContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.knowledgeContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.knowledgeContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+.knowledgeContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+}
