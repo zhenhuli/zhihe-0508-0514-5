@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>书法米字格宣纸生成器</title>
+  <link rel="stylesheet" href="./styles/main.less">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>书法米字格宣纸生成器</h1>
+    </header>
+
+    <div class="main-content">
+      <aside class="controls-panel">
+        <div class="control-group">
+          <h3>排版模式</h3>
+          <div class="mode-selector">
+            <button class="mode-btn active" data-mode="hard">硬笔书法</button>
+            <button class="mode-btn" data-mode="soft">毛笔书法</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>格子设置</h3>
+          <div class="control-item">
+            <label>格子大小: <span id="gridSizeValue">60</span>px</label>
+            <input type="range" id="gridSize" min="30" max="150" value="60">
+          </div>
+          <div class="control-item">
+            <label>行数: <span id="rowsValue">10</span></label>
+            <input type="range" id="rows" min="5" max="30" value="10">
+          </div>
+          <div class="control-item">
+            <label>列数: <span id="colsValue">8</span></label>
+            <input type="range" id="cols" min="4" max="20" value="8">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>线条设置</h3>
+          <div class="control-item">
+            <label>外框粗细: <span id="borderWidthValue">2</span>px</label>
+            <input type="range" id="borderWidth" min="1" max="5" value="2">
+          </div>
+          <div class="control-item">
+            <label>内格粗细: <span id="innerLineWidthValue">1</span>px</label>
+            <input type="range" id="innerLineWidth" min="0.5" max="3" step="0.5" value="1">
+          </div>
+          <div class="control-item">
+            <label>线条颜色</label>
+            <input type="color" id="lineColor" value="#c41e3a">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>宣纸设置</h3>
+          <div class="control-item">
+            <label>宣纸底色</label>
+            <input type="color" id="paperColor" value="#f8f1e5">
+          </div>
+          <div class="control-item">
+            <label>纸张纹理</label>
+            <select id="paperTexture">
+              <option value="none">无纹理</option>
+              <option value="light" selected>浅纹理</option>
+              <option value="heavy">深纹理</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>米字格样式</h3>
+          <div class="control-item">
+            <label>
+              <input type="checkbox" id="showDiagonal" checked>
+              显示对角线
+            </label>
+          </div>
+          <div class="control-item">
+            <label>
+              <input type="checkbox" id="showCenterDot" checked>
+              显示中心点
+            </label>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <button id="printBtn" class="print-btn">打印 / 导出</button>
+          <button id="resetBtn" class="reset-btn">重置设置</button>
+        </div>
+      </aside>
+
+      <main class="preview-area">
+        <div class="paper-container" id="paperContainer">
+          <div class="paper" id="paper">
+            <div class="grid-container" id="gridContainer"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "calligraphy-grid-paper",
+  "version": "1.0.0",
+  "description": "书法米字格宣纸生成器",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "node scripts/start-server.js",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "calligraphy",
+    "grid-paper",
+    "米字格",
+    "书法"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-less": "^2.16.4",
+    "less": "^4.6.4",
+    "parcel": "^2.16.4"
+  }
+}
