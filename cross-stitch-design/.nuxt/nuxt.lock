@@ -1,0 +1,9 @@
+{
+  "pid": 18860,
+  "startedAt": 1778814527137,
+  "command": "dev",
+  "cwd": "/Users/lizhenhu/Desktop/zhihe-0508-0514-5/cross-stitch-design",
+  "port": 3000,
+  "hostname": "::1",
+  "url": "http://[::1]:3000"
+}
