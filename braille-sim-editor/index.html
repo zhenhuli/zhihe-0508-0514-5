@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盲文点阵模拟编辑器</title>
+  <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>盲文点阵模拟编辑器</h1>
+      <p>点击点阵自由组合，自动转译对应文字</p>
+    </div>
+
+    <div class="main-content">
+      <div class="braille-editor">
+        <div class="editor-panel">
+          <h3>六点点阵编辑器</h3>
+          <div class="canvas-container">
+            <canvas id="brailleCanvas" width="200" height="280"></canvas>
+          </div>
+          <div class="controls">
+            <button class="btn-secondary" id="clearBtn">清空</button>
+            <button class="btn-primary" id="addBtn">添加到历史</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <div class="encoding-selector">
+          <label for="encodingSelect">选择编码规则：</label>
+          <select id="encodingSelect">
+            <option value="unicode">Unicode 标准盲文</option>
+            <option value="chinese">中文盲文（现行）</option>
+            <option value="chinese-double">中文盲文（双拼）</option>
+          </select>
+        </div>
+
+        <div class="result-display">
+          <h3>转译结果</h3>
+          <div class="character-display">
+            <div class="label">对应字符</div>
+            <div class="character" id="resultChar">
+              <span class="empty">点击点阵开始</span>
+            </div>
+          </div>
+          <div class="braille-code">
+            <div class="label">点阵编码</div>
+            <div class="code" id="brailleCode">000000</div>
+          </div>
+        </div>
+
+        <div class="history-section">
+          <div class="history-header">
+            <h3>历史记录</h3>
+            <button class="btn-small" id="clearHistoryBtn">清空</button>
+          </div>
+          <div class="history-list" id="historyList">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      盲文点阵模拟编辑器 - 支持多种编码规则
+    </div>
+  </div>
+
+  <script src="src/js/braille.js"></script>
+</body>
+</html>

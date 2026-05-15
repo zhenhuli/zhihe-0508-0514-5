@@ -1,0 +1,26 @@
+{
+  "name": "braille-sim-editor",
+  "version": "1.0.0",
+  "description": "盲文点阵模拟编辑器",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "braille",
+    "editor",
+    "canvas"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "detect-port": "^1.5.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.69.5"
+  }
+}
